@@ -21,7 +21,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({482685493914632193: true});
 
-const prefix = "f";
+const prefix = "a";
 /////////////////////////
 ////////////////////////
 
@@ -49,19 +49,19 @@ client.on('message', async msg =>{
 //////////////////////
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
-    if (!msg.content.startsWith(prefix)) return undefined;
+    if (!msg.content.startsWith(prefix)) return undefined;//by .Báraaaa.✯#5999
     
     let args = msg.content.split(' ');
 
-	let command = msg.content.toLowerCase().split(" ")[0];
+	let command = msg.content.toLowerCase().split(" ")[0];//by .Báraaaa.✯#5999
 	command = command.slice(prefix.length)
 
     if(command === `avatar`){
-	if(msg.channel.type === 'dm') return msg.channel.send("Nope Nope!! u can't use avatar command in DMs (:")
+	if(msg.channel.type === 'dm') return msg.channel.send("Nope Nope!! u can't use avatar command in DMs (:")//by .Báraaaa.✯#5999
         let mentions = msg.mentions.members.first()
         if(!mentions) {
           let sicon = msg.author.avatarURL
-          let embed = new Discord.RichEmbed()
+          let embed = new Discord.RichEmbed()//by .Báraaaa.✯#5999
           .setImage(msg.author.avatarURL)
           .setColor("0099cc")
           msg.channel.send({embed})
@@ -70,7 +70,7 @@ client.on('message', async msg =>{
           let embed = new Discord.RichEmbed()
           .setColor("#0099cc")
           .setImage(sicon)
-          msg.channel.send({embed})
+          msg.channel.send({embed})//by .Báraaaa.✯#5999
         }
     };
 });
@@ -94,7 +94,7 @@ client.on('message', async msg => {
     const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
     
-	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
+	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';//by .Báraaaa.✯#5999
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(" ")[0];
@@ -109,12 +109,12 @@ client.on('message', async msg => {
         
         if (!permissions.has('CONNECT')) {
 
-			return msg.channel.send("I don't have enough permissions to join your voice channel!");
+			return msg.channel.send("I don't have enough permissions to join your voice channel!");//by .Báraaaa.✯#5999
         }
         
 		if (!permissions.has('SPEAK')) {
 
-			return msg.channel.send("I don't have enough permissions to speak in your voice channel!");
+			return msg.channel.send("I don't have enough permissions to speak in your voice channel!");//by .Báraaaa.✯#5999
 		}
 
 		if (!permissions.has('EMBED_LINKS')) {
@@ -136,7 +136,7 @@ client.on('message', async msg => {
 			return msg.channel.send(`**${playlist.title}**, Just added to the queue!`);
 		} else {
 
-			try {
+			try {//by .Báraaaa.✯#5999
 
                 var video = await youtube.getVideo(url);
                 
@@ -144,14 +144,14 @@ client.on('message', async msg => {
 				try {
 
 					var videos = await youtube.searchVideos(searchString, 5);
-					let index = 0;
+					let index = 0;//by .Báraaaa.✯#5999
                     const embed1 = new Discord.RichEmbed()
                     .setTitle(":mag_right:  YouTube Search Results :")
                     .setDescription(`
-                    ${videos.map(video2 => `${++index}. **${video2.title}**`).join('\n')}`)
+                    ${videos.map(video2 => `${++index}. **${video2.title}**`).join('\n')}`)//by .Báraaaa.✯#5999
                     
 					.setColor("#f7abab")
-					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
+					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})//by .Báraaaa.✯#5999
 					
 /////////////////					
 					try {
@@ -172,14 +172,14 @@ client.on('message', async msg => {
 				} catch (err) {
 
 					console.error(err);
-					return msg.channel.send("I didn't find any results!");
+					return msg.channel.send("I didn't find any results!");//by .Báraaaa.✯#5999
 				}
 			}
 
             return handleVideo(video, msg, voiceChannel);
             
         }
-        
+        //by .Báraaaa.✯#5999
 	} else if (command === `skip`) {
 
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
@@ -189,7 +189,7 @@ client.on('message', async msg => {
         return undefined;
         
 	} else if (command === `stop`) {
-
+//by .Báraaaa.✯#5999//by .Báraaaa.✯#5999
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
         if (!serverQueue) return msg.channel.send("There is no Queue to stop!!");
         
@@ -326,7 +326,7 @@ client.on('message', message => {
         .addField('fresume', 'تكملة الاغنية')
         .addField('fqueue', 'اظهار قائمة التشغيل')
         .addField('fnp', 'اظهار الاغنية اللي انت مشغلها حاليا')
-        .setFooter('تم برمجة البوت من قبل Hady Khaled#6687')
+        .setFooter('تم برمجة البوت من قبل.Báraaaa.✯#5999')//by .Báraaaa.✯#5999
       message.channel.send(helpEmbed);
     }
 });
@@ -342,17 +342,17 @@ client.on('message', message => {
       message.channel.send(helpEmbed);
     }
 });
-const developers = ["458146650758840320"]
+const developers = ["476518277875761153"]
 const adminprefix = "1";
 client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
+    var argresult = message.content.split(` `).slice(1).join(' ');//by .Báraaaa.✯#5999
       if (!developers.includes(message.author.id)) return;
       
-  if (message.content.startsWith(adminprefix + 'ply')) {
+  if (message.content.startsWith(adminprefix + 'ply')) {//by .Báraaaa.✯#5999
     client.user.setGame(argresult);
       message.channel.send(`**✅   ${argresult}**`)
   } else 
-     if (message.content === (adminprefix + "leave")) {
+     if (message.content === (adminprefix + "leave")) //by .Báraaaa.✯#5999
     message.guild.leave();        
   } else  
   if (message.content.startsWith(adminprefix + 'wt')) {
